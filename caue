@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão de Ondas - Santos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #005f73;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #0a9396;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #005f73;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Previsão de Ondas - Santos</h1>
+        <p>Fique por dentro das condições das ondas para surfar em Santos!</p>
+    </header>
+
+    <nav>
+        <a href="#">Página Inicial</a>
+        <a href="#">Previsão de Ondas</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <section>
+        <h2>Previsão para Hoje</h2>
+        <p><strong>Altura das ondas:</strong> 1.5 metros</p>
+        <p><strong>Período:</strong> 12 segundos</p>
+        <p><strong>Vento:</strong> NE a 15 km/h</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Previsão de Ondas - Santos. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
