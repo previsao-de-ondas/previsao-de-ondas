@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Criptomoedas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Análise de Criptomoedas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Criptomoeda</th>
+                <th>Descrição</th>
+                <th>Preço (USD)</th>
+                <th>Cap. de Mercado (USD)</th>
+                <th>MACD</th>
+                <th>Recomendação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bitcoin (BTC)</td>
+                <td>A primeira e mais conhecida criptomoeda.</td>
+                <td id="btc-price">--</td>
+                <td id="btc-marketcap">--</td>
+                <td id="btc-macd">--</td>
+                <td id="btc-recommendation">--</td>
+            </tr>
+            <tr>
+                <td>Ethereum (ETH)</td>
+                <td>Plataforma para contratos inteligentes e dApps.</td>
+                <td id="eth-price">--</td>
+                <td id="eth-marketcap">--</td>
+                <td id="eth-macd">--</td>
+                <td id="eth-recommendation">--</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Função para carregar os dados do localStorage
+        function loadData() {
+            const btcData = JSON.parse(localStorage.getItem('btcData'));
+            const ethData = JSON.parse(localStorage.getItem('ethData'));
+
+            if (btcData) {
+                document.getElementById("btc-price").innerText = btcData.price;
+                document.getElementById("btc-marketcap").innerText = btcData.marketcap;
+                document.getElementById("btc-macd").innerText = btcData.macd;
+                document.getElementById("btc-recommendation").innerText = btcData.recommendation;
+            }
+
+            if (ethData) {
+                document.getElementById("eth-price").innerText = ethData.price;
+                document.getElementById("eth-marketcap").innerText = ethData.marketcap;
+                document.getElementById("eth-macd").innerText = ethData.macd;
+                document.getElementById("eth-recommendation").innerText = ethData.recommendation;
+            }
+        }
+
+        // Função para salvar os dados no localStorage
+        function saveData() {
+            const btcData = {
+                price: "$30,000",
+                marketcap: "$600 Billion",
+                macd: "0.5",
+                recommendation: "Comprar"
+            };
+            const ethData = {
+                price: "$2,000",
+                marketcap: "$250 Billion",
+                macd: "-0.1",
+                recommendation: "Vender"
+            };
+
+            localStorage.setItem('btcData', JSON.stringify(btcData));
+            localStorage.setItem('ethData', JSON.stringify(ethData));
+        }
+
+        // Carregar os dados ao iniciar
+        loadData();
+
+        // Salvar os dados caso não estejam no localStorage
+        if (!localStorage.getItem('btcData') || !localStorage.getItem('ethData')) {
+            saveData();
+        }
+    </script>
+
+</body>
+</html>
